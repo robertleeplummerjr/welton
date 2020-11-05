@@ -1,18 +1,19 @@
 import { h } from 'preact';
-import { useEffect, useReducer, useState } from 'preact/hooks';
+import { useReducer } from 'preact/hooks';
 import brain from 'brain.js';
 
 import { Beer } from './beer';
 import trainingData from '../assets/training-data.json';
-import { getAllInputs, getAllOutputs, getNetResultsArray } from '../train-utils';
+import { getAllInputs, getNetResultsArray } from '../train-utils';
 import { W3Slider } from '../w3-slider';
+import { formatSliderInput, formatRecipeOutput } from '../formatter';
 import trainedNet from '../assets/trained-net.json';
+import clawhammerLogo from '../assets/clawhammer logo.png';
 
-const net = new brain.NeuralNetwork();
+const net = new brain.NeuralNetworkGPU();
 net.fromJSON(trainedNet);
 
 const qualities = getAllInputs(trainingData);
-const results = getAllOutputs(trainingData);
 
 const initialState = {
 	'Brew Time': 0,
@@ -67,11 +68,14 @@ export const App = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 	const output = net.run(state);
 	const recipe = getNetResultsArray(output);
-	useEffect(() => {
-		// console.log(getAllOutputs(trainingData));
-	});
 	return (<div id="app">
-		<Beer style={{zIndex: 2}}/>
+		<Beer
+			style={{zIndex: 2}}
+			red={output.red}
+			green={output.green}
+			blue={output.blue}
+			opacity={1}
+		/>
 		<div style={{
 			position: 'fixed',
 			background: 'url(/assets/irish-pub.png) no-repeat center center fixed',
@@ -101,12 +105,20 @@ export const App = () => {
 							case 'slider': {
 								return (
 									<div>
-										<label for={quality.name}>{quality.name}: {state[quality.name]}</label>
-										<W3Slider name={quality.name} step={1} value={state[quality.name]} min={0} max={10}
-															onChange={(value) => {
-																value = parseInt(value);
-																dispatch({ type: quality.name, value });
-															}}/>
+										<label for={quality.name}>{quality.name}: {formatSliderInput(quality.name, state[quality.name])}</label>
+										<W3Slider
+											style={{
+												width: '80%',
+											}}
+											name={quality.name}
+											step={0.5}
+											value={state[quality.name]}
+											min={0}
+											max={10}
+											onChange={(value) => {
+												value = parseInt(value);
+												dispatch({ type: quality.name, value });
+											}}/>
 									</div>
 								);
 							}
@@ -114,7 +126,10 @@ export const App = () => {
 								return (
 									<div>
 										<input type="checkbox" onChange={(e) => {
-											dispatch({ type: quality.name, value: e.currentTarget.checked ? 1 : 0 });
+											dispatch({
+												type: quality.name,
+												value: e.currentTarget.checked ? 1 : 0
+											});
 										}} checked={state[quality.name]} />
 										<label for={quality.name}>{quality.name}</label>
 									</div>
@@ -140,12 +155,39 @@ export const App = () => {
 				<h2>Your Experimental { output.Ale > output.Pilsner ? 'Ale' : 'Pilsner' } Recipe</h2>
 				{
 					recipe.map(({ outputType, value }) => {
-						if (outputType === 'Ale' || outputType === 'Pilsner') return null;
+						if (
+							outputType === 'Ale'
+							|| outputType === 'Pilsner'
+							|| outputType === 'red'
+							|| outputType === 'green'
+							|| outputType === 'blue'
+						) return null;
 						if (value < 0.2) return null;
-						return (<div>{ outputType } { value }</div>);
+						return (<div>{ outputType } { formatRecipeOutput(outputType, null, value) }</div>);
 					})
 				}
 			</div>
+		</div>
+		<div style={{
+			right: 0,
+			bottom: 0,
+			position: 'fixed',
+			zIndex: 3,
+			padding: '10px',
+			width: '160px',
+			textAlign: 'center',
+		}}>
+			<a href="https://www.clawhammersupply.com/" target="_blank" style={{
+				textDecoration: 'none',
+			}}>
+				<div style={{
+					color: '#f8f4f2',
+				}}>Made with help from</div>
+				<img src={clawhammerLogo} style={{
+					width: '120px',
+					zIndex: 4,
+				}}/>
+			</a>
 		</div>
 	</div>);
 }

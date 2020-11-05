@@ -24,16 +24,13 @@ function normalizeColor(quality) {
   return { red: red / 255, green: green / 255, blue: blue / 255 };
 }
 
-function normalizeObject(data) {
+function normalizeObject(data, includeColor) {
   let io = {};
   for (const quality in data) {
     if (!data.hasOwnProperty(quality)) continue;
-    if (quality === 'Color') {
-      io = { ...normalizeColor(data[quality]), ...io };
-    } else {
-      const bound = bounds[quality];
-      io[quality] = (data[quality].value - bound.smallest) / (bound.largest - bound.smallest);
-    }
+    if (quality === 'Color') continue;
+    const bound = bounds[quality];
+    io[quality] = (data[quality].value - bound.smallest) / (bound.largest - bound.smallest);
   }
   return io;
 }
@@ -41,12 +38,14 @@ function normalizeObject(data) {
 const net = new brain.NeuralNetwork();
 
 net.train(trainingData.map(beer => {
+  const { red, green, blue } = normalizeColor(beer.result.Color);
   return {
     input: normalizeObject(beer.result),
     output: {
       Pilsner: beer.result.Pilsner ? beer.result.Pilsner.value : 0,
       Ale: beer.result.Ale ? beer.result.Ale.value : 0,
-      ...normalizeObject(beer.recipe)
+      red, green, blue,
+      ...normalizeObject(beer.recipe),
     },
   };
 }), { log: true });

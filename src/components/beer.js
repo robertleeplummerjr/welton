@@ -113,21 +113,29 @@ const beerColor = [1, .8, .4, 1];
 
 export class Beer extends Component {
   ref = createRef();
+  kernel = null;
   componentDidMount() {
     if (!kernel) {
       gpu = new GPU({ canvas: this.ref.current });
-      kernel = gpu.createKernel(function(time) {
-        this.color(0.3803921568627451, 0.23921568627450981, 0.09803921568627451, 1);
+      this.kernel = gpu.createKernel(function(time, red, green, blue, opacity) {
+        this.color(red, green, blue, opacity);
         // this.color(1, .8, .5, 1);
       }, {
         output: [window.innerWidth, window.innerHeight],
         graphical: true,
       });
     }
-    kernel(Date.now());
+    this.drawBeer(0.3803921568627451, 0.23921568627450981, 0.09803921568627451, 1);
+  }
+
+  drawBeer(red, green, blue, opacity) {
+    if (!this.kernel) return;
+    // this.kernel(Date.now(), 0.3803921568627451, 0.23921568627450981, 0.09803921568627451, 1);
+    this.kernel(Date.now(), red, green, blue, 1);
   }
 
   render(props, state, context) {
+    this.drawBeer(props.red, props.green, props.blue, props.opacity);
     return <canvas
       ref={this.ref}
       style={{

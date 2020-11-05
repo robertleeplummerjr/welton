@@ -4,6 +4,7 @@ export const W3Slider = (props) => {
   return (
     <div className="slidecontainer">
       <input
+        style={props.style}
         oninput={(e) => {
           props.onChange(e.currentTarget.value);
         }}

@@ -51,7 +51,6 @@ function getNetResultsArray(output) {
   Object.keys(output).forEach(key => {
     result.push({ outputType: key, value: output[key] });
   });
-  console.log(result);
   return result;
 }
 
