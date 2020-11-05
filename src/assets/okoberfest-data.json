@@ -1,0 +1,20 @@
+{
+  "name": "Brewing Beer: Oktoberfest / Mirzen / Festbier",
+  "url": "https://www.clawhammersupply.com/blogs/moonshine-still-blog/brewing-beer-oktoberfest-style-brew?_pos=8&_sid=ff41fc93c&_ss=r",
+  "recipe": {
+    "Water": { "value": 8.13, "type": "gallons" },
+    "Pilsner (2 row) Ger": { "value":  100, "type": "ounce" },
+    "Munich Malt (9.0 SRM)": { "value": 72, "type": "ounce" },
+    "Caramel/Crystal Malt": { "value": 7.2, "type": "ounce" },
+    "Caramunich Malt": { "value":  7.2, "type": "ounce" },
+    "Mash Time": { "value": 85, "type": "minute" },
+    "Mash Temperature": { "value": 152, "type": "temperature fahrenheit" },
+    "Hallertau": { "value": 2, "type": "ounce" },
+    "Centennial": { "value": 0.25, "type": "ounce" },
+    "White Labs WLP 820 Oktoberfest Marzen Lager Yeast": { "value": 1, "type": "package" }
+  },
+  "result": {
+    "Color": { "value":  "#422518", "type": "color" },
+    "ABV": { "value":  5.7, "input-type": "slider" }
+  }
+}

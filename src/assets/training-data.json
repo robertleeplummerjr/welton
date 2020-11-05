@@ -1,0 +1,141 @@
+[
+  {
+    "name": "Belgian Tripel - Homebrew Recipe",
+    "url": "https://www.clawhammersupply.com/blogs/moonshine-still-blog/belgian-tripel-homebrew-recipe?_pos=1&_sid=2b112fe68&_ss=r",
+    "recipe": {
+      "Water": { "value": 8.11, "type": "gallon" },
+      "Pilsner Malt": { "value": 14, "type": "pound" },
+      "Mash Time": { "value": 90, "type": "minute" },
+      "Mash Temperature": { "value": 148, "type": "temperature fahrenheit" },
+      "Lactic Acid": { "value": 5.5, "type": "cc" },
+      "Simplicity Candi Syrup": { "value": 2.5, "type": "pound" },
+      "Styrian Golding Hops": { "value": 1, "type": "ounce" },
+      "Nelson Sauvin Hops": { "value": 0.5, "type": "ounce" },
+      "Whirlfloc Tablet": { "value": 1, "type": "tablet" },
+      "Whirlfloc Tablet Time": { "value": 30, "type": "minute" },
+      "WLP530 Abbey Ale Yeast": { "value": 2, "type": "pack" }
+    },
+    "result": {
+      "Brew Time": { "value": 6, "type": "weeks", "input-type": "slider" },
+      "Color": { "value": "#ba6303", "type": "color" },
+      "Haze": { "value": 0.2, "type": "opacity" },
+      "Gravity": { "value": 1.012, "type": "gravity", "input-type": "slider" },
+      "ABV": { "value": 9, "type": "alcohol", "input-type": "slider" },
+      "Banana Bread Scent": { "value": 1, "type": "smell", "input-type": "checkbox" },
+      "Clove Scent": { "value": 1, "type": "smell", "input-type": "checkbox" },
+      "Spice Scent": { "value": 1, "type": "smell", "input-type": "checkbox" },
+      "Pilsner": { "value": 1, "type": "profile" }
+    }
+  },
+  {
+    "name": "Juicy IPA Homebrew Recipe",
+    "url": "https://www.clawhammersupply.com/blogs/moonshine-still-blog/juicy-ipa-homebrew-recipe?_pos=4&_sid=603a292e3&_ss=r",
+    "recipe": {
+      "Water": { "value": 8.0, "type": "gallon" },
+      "Mash Time": { "value": 90, "type": "minute" },
+      "Mash Temperature": { "value": 149, "type": "temperature fahrenheit" },
+      "Pale Malt": { "value": 11, "type": "pound" },
+      "Munich Malt": { "value": 1.75, "type": "pound" },
+      "Crystal 60L": { "value": 12, "type": "ounce" },
+      "Corn Sugar": { "value": 1, "type": "pound" },
+      "Nugget": { "value": 0.60, "type": "ounce" },
+      "Whirlfloc Tablet": { "value": 1, "type": "tablet" },
+      "Whirlfloc Tablet Time": { "value": 15, "type": "minute" },
+      "Citra Hops": { "value": 1, "type": "ounce" },
+      "Mosaic Hops": { "value": 1, "type": "ounce" },
+      "Sugar": { "value": 1, "type": "pound" },
+      "WLP001 California Ale Yeast": { "value": 1, "type": "pack" }
+    },
+    "result": {
+      "Brew Time": { "value": 1.5, "type": "weeks", "input-type": "slider" },
+      "Color": { "value": "#2f1400", "type": "color" },
+      "Haze": { "value": 0.8, "type": "opacity" },
+      "Gravity": { "value": 1.012, "type": "gravity", "input-type": "slider" },
+      "ABV": { "value": 7.35, "type": "alcohol", "input-type": "slider" },
+      "Fruity Scent": { "value": 1, "type": "smell", "input-type": "checkbox" },
+      "Hoppy Flavor": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Juicy Flavor": { "value":  1, "type":  "taste", "input-type": "checkbox" },
+      "Ale": { "value": 1, "type": "profile" }
+    }
+  },
+  {
+    "name": "Brut IPA Recipe",
+    "url": "https://www.clawhammersupply.com/blogs/moonshine-still-blog/brut-ipa-recipe-homebrew-beer?_pos=6&_sid=603a292e3&_ss=r",
+    "recipe": {
+      "Water": { "value": 7.8, "type": "gallon" },
+      "German Pilsner": { "value": 9, "type": "pound" },
+      "Flaked Corn": { "value":  20, "type": "ounce" },
+      "Flaked Rice": { "value":  20, "type": "ounce" },
+      "Huell Melon Hops": { "value": 6, "type": "ounce" },
+      "Alpha galactosidase enzyme": { "value": 1, "type": "pack" },
+      "Yeast nutrient": { "value": 1, "type": "pack" },
+      "Pilsner Malt Time": { "value": 60, "type": "minute" },
+      "Mash Temperature": { "value": 170, "type": "temperature fahrenheit" },
+      "Whirlfloc Tablet": { "value": 1, "type": "tablet" },
+      "Whirlfloc Tablet Time": { "value": 20, "type": "minute" },
+      "WLP001 California Ale Yeast": { "value": 2, "type": "pack" }
+    },
+    "result": {
+      "Brew Time": { "value": 1.5, "type": "weeks", "input-type": "slider" },
+      "Color": { "value": "#d8ab00", "type": "color" },
+      "Haze": { "value": 1, "type": "opacity" },
+      "Gravity": { "value": 1.01, "type": "gravity", "input-type": "slider" },
+      "ABV": { "value": 6.3, "type": "alcohol", "input-type": "slider" },
+      "Creamy Flavor": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Dry Taste": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Pilsner": { "value": 1, "type": "profile" },
+      "Ale": { "value": 1, "type": "profile" },
+      "Gritty Taste": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Sweet Flavor": { "value": 1, "type": "flavor", "input-type": "checkbox" }
+    }
+  },
+  {
+    "name": "Pre Prohibition Home Brew Beer Recipe",
+    "url": "https://www.clawhammersupply.com/blogs/moonshine-still-blog/pre-prohibition-home-brew-beer-recipe?_pos=7&_sid=ff41fc93c&_ss=r",
+    "recipe": {
+      "Water": { "value": 7.86, "type": "gallon" },
+      "Pale Malt": { "value": 132, "type": "ounce" },
+      "Flaked Corn": { "value": 17.5, "type": "ounce" },
+      "Cara-Pils": { "value": 8, "type": "ounce" },
+      "Mash Time": { "value": 80, "type": "minute" },
+      "Mash Temperature": { "value": 150, "type": "temperature fahrenheit" },
+      "Cluster Hops": { "value": 1.8, "type": "ounce" }
+
+    },
+    "result": {
+      "Brew Time": { "value": 3.5, "type": "weeks", "input-type": "slider" },
+      "Color": { "value": "#fcd039", "type": "color" },
+      "Haze": { "value": 0, "type": "opacity" },
+      "Gravity": { "value": 1.01, "type": "gravity", "input-type": "slider" },
+      "ABV": { "value": 4.2, "type": "alcohol", "input-type": "slider" },
+      "Crisp Taste": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Pilsner": { "value": 1, "type": "profile" }
+    }
+  },
+  {
+    "name": "Kona Big Wave Clone - Blonde Ale Homebrew Recipe",
+    "url": "https://www.clawhammersupply.com/blogs/moonshine-still-blog/kona-big-wave-clone-blonde-ale-homebrew-recipe?_pos=10&_sid=aa4c98e60&_ss=r",
+    "recipe": {
+      "Water": { "value": 7.5, "type": "gallons" },
+      "Pilsner Malt": { "value": 4.5, "type": "pound" },
+      "Pale Malt": { "value": 4.5, "type": "pound" },
+      "Honey Malt": { "value": 8, "type": "ounce"  },
+      "Carmel Malt": { "value": 4, "type": "ounce"  },
+      "Galaxy Hops": { "value": 0.15, "type": "ounce" },
+      "Citra Hops": { "value": 0.7, "type": "ounce" },
+      "Safale US-05": { "value": 1, "type": "package" }
+    },
+    "result": {
+      "Brew Time": { "value": 2, "type": "weeks", "input-type": "slider" },
+      "Color": { "value": "#ac5100", "type": "color" },
+      "Haze": { "value": 0.3, "type": "opacity" },
+      "Gravity": { "value": 1.048, "type": "gravity", "input-type": "slider" },
+      "ABV": { "value": 4.4, "type": "alcohol", "input-type": "slider" },
+      "Light Taste": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Refreshing Taste": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Lemon Flavor": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Lime Flavor": { "value": 1, "type": "taste", "input-type": "checkbox" },
+      "Ale": { "value": 1, "type": "profile" }
+    }
+  }
+]
