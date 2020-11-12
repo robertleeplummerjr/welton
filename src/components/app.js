@@ -70,7 +70,15 @@ export const App = () => {
 	const recipe = getNetResultsArray(output);
 	return (<div id="app">
 		<Beer
-			style={{zIndex: 2}}
+			style={{
+				zIndex: 2,
+				width: 500,
+				height: 800,
+				position: 'fixed',
+				left: '50%',
+				transform: 'translate(-50%, -50%)',
+				top: '50%',
+			}}
 			red={output.red}
 			green={output.green}
 			blue={output.blue}

@@ -4,4 +4,5 @@ export default (config, env, helpers) => {
     "node_modules/brain.js",
     "node_modules/gpu.js",
   );
+  config.module.rules.push({ test: /\.glsl$/, use: 'raw-loader' })
 };
