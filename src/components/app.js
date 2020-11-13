@@ -88,8 +88,8 @@ export const App = () => {
 			position: 'fixed',
 			background: 'url(/assets/irish-pub.png) no-repeat center center fixed',
 			backgroundSize: 'cover',
-			width: window ? window.innerWidth : 0,
-			height: window ? window.innerHeight : 0,
+			width: typeof window !== 'undefined' ? window.innerWidth : 0,
+			height: typeof window !== 'undefined' ? window.innerHeight : 0,
 			zIndex: 2,
 			fontColor: '#291f1b'
 		}}>
