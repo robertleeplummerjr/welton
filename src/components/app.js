@@ -178,7 +178,7 @@ export const App = () => {
 		</div>
 		<div style={{
 			right: 0,
-			bottom: 0,
+			top: 0,
 			position: 'fixed',
 			zIndex: 3,
 			padding: '10px',
@@ -190,7 +190,7 @@ export const App = () => {
 			}}>
 				<div style={{
 					color: '#f8f4f2',
-				}}>Made with help from</div>
+				}}>Made with help from:</div>
 				<img src={clawhammerLogo} style={{
 					width: '120px',
 					zIndex: 4,
